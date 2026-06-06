@@ -9,7 +9,7 @@
 </div>
 <br>
 
-AbsoluteRTL is a lightweight, open-source extension that brings seamless Right-to-Left (RTL) formatting to AI interfaces lacking native support for complex, multi-language text directions. It gives you precise, on-demand control over your layout and runs entirely offline with absolute zero telemetry.
+AbsoluteRTL is a lightweight, open-source extension that brings seamless Right-to-Left (RTL) formatting to AI interfaces lacking native support for complex, multi-language text directions. It gives you precise, on-demand control over your layout, runs entirely offline with absolute zero telemetry, and enforces the [Vazirmatn](https://github.com/rastikerdar/vazirmatn) typeface to ensure consistent, highly legible rendering for Persian and Arabic scripts.
 
 **Currently Supported Platforms:**
 - Google Gemini
