@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AbsoluteRTL",
-  "version": "0.97",
+  "version": "1.0.0",
   "description": "An offline, on-demand browser extension for RTL rendering in data-sensitive AI workflows.",
   "permissions": [
     "activeTab",
@@ -9,7 +9,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "absolute-rtl@rezashabankhah.com",
+      "id": "{a23e98b1-4c65-4f2d-8e9a-1b3c5d7f6a8e}",
       "strict_min_version": "109.0"
     }
   },
@@ -34,8 +34,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://gemini.google.com/*",
-        "https://aistudio.google.com/*"
+        "https://gemini.google.com/*"
       ],
       "css": [
         "styles.css"
@@ -52,8 +51,7 @@
         "fonts/*.woff2"
       ],
       "matches": [
-        "https://gemini.google.com/*",
-        "https://aistudio.google.com/*"
+        "https://gemini.google.com/*"
       ]
     }
   ],

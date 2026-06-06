@@ -1,0 +1,31 @@
+name: Build Release Binaries
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  package-extension:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Compile Chromium ZIP
+        run: |
+          # Zip all files, strictly excluding repository metadata and documentation
+          zip -r AbsoluteRTL-Chromium.zip . -x "*.git*" "*.github*" "README.md" "LICENSE" ".gitignore"
+
+      - name: Compile Firefox XPI
+        run: |
+          # Firefox utilizes the exact same archive structure, merely renamed to .xpi
+          cp AbsoluteRTL-Chromium.zip AbsoluteRTL-Firefox.xpi
+
+      - name: Attach Assets to Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} AbsoluteRTL-Chromium.zip AbsoluteRTL-Firefox.xpi

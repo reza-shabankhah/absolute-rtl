@@ -13,7 +13,6 @@ AbsoluteRTL is a lightweight, open-source extension that brings seamless Right-t
 
 **Currently Supported Platforms:**
 - Google Gemini
-- Google AI Studio
 
 ## The Security Paradigm
 
@@ -34,20 +33,19 @@ Rather than blindly flipping the entire `dir` attribute of the `<html>` tag—wh
 
 ## Installation Protocols
 
-For maximum operational security, verify the source code and install the engine as an unpacked local directory. 
+Download the latest compiled release binaries directly from the [Releases](https://github.com/reza-shabankhah/absolute-rtl/releases/latest) page.
 
-1. Clone this repository to your local machine:
-```bash
-   git clone https://github.com/reza-shabankhah/absolute-rtl.git
-```
-2. **Chromium (Chrome/Brave/Edge):**
-   - Navigate to `chrome://extensions/`
-   - Enable **Developer mode**
-   - Click **Load unpacked** and select the `absolute-rtl/` directory.
-3. **Mozilla Firefox:**
-   - Navigate to `about:debugging`
-   - Select **This Firefox**
-   - Click **Load Temporary Add-on** and select the `manifest.json` file inside the `absolute-rtl/` directory. *(Note: Firefox purges temporary extensions upon restart).*
+- **Chromium (Chrome/Brave/Edge):**
+  1. Download `AbsoluteRTL-Chromium.zip` and extract the archive to a permanent directory on your machine.
+  2. Navigate to `chrome://extensions/`.
+  3. Enable **Developer mode**.
+  4. Click **Load unpacked** and select the extracted directory.
+
+- **Mozilla Firefox:**
+  1. Download `AbsoluteRTL-Firefox.xpi`.
+  2. Navigate to `about:debugging`.
+  3. Select **This Firefox**.
+  4. Click **Load Temporary Add-on** and select the downloaded `.xpi` file. *(Note: Firefox purges unsigned temporary extensions upon browser restart).*
 
 ## License
 This project is open-source and distributed under the MIT License. See the `LICENSE` file for absolute legal parameters.
