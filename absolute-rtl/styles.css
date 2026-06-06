@@ -1,0 +1,84 @@
+.rtl-engine-active [data-ext-dir="rtl-input"],
+.rtl-engine-active [data-ext-dir="rtl"] {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.rtl-engine-active [data-ext-dir="ltr"] {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.rtl-engine-active [data-ext-dir="rtl-input"]::placeholder,
+.rtl-engine-active [data-ext-dir="rtl-input"][data-placeholder]:empty::before,
+.rtl-engine-active rich-textarea [class*="placeholder"] {
+    direction: ltr !important;
+    text-align: left !important;
+    right: auto !important;
+}
+
+.rtl-engine-active :is(ul, ol, li)[data-ext-dir="rtl"] {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.rtl-engine-active li[data-ext-dir="rtl"]::marker {
+    display: none !important;
+    content: "" !important;
+    color: transparent !important;
+}
+
+.rtl-engine-active :is(ul, ol)[data-ext-dir="rtl"] {
+    padding-right: 0 !important;
+}
+
+.rtl-engine-active li[data-ext-dir="rtl"] {
+    position: relative !important;
+    padding-right: 1.5em !important;
+}
+
+.rtl-engine-active ul[data-ext-dir="rtl"]>li[data-ext-dir="rtl"]::before {
+    content: "•" !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0.38em !important;
+    font-size: 1.2em !important;
+    line-height: 1 !important;
+}
+
+.rtl-engine-active ul[data-ext-dir="rtl"] ul[data-ext-dir="rtl"]>li[data-ext-dir="rtl"]::before {
+    content: "◦" !important;
+    top: 0.33em !important;
+    font-size: 1.3em !important;
+}
+
+.rtl-engine-active ol[data-ext-dir="rtl"] {
+    counter-reset: custom-rtl-counter !important;
+}
+
+.rtl-engine-active ol[data-ext-dir="rtl"]>li[data-ext-dir="rtl"] {
+    counter-increment: custom-rtl-counter !important;
+}
+
+.rtl-engine-active ol[data-ext-dir="rtl"]>li[data-ext-dir="rtl"]::before {
+    content: counter(custom-rtl-counter) "." !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0.15em !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+}
+
+.rtl-engine-active ms-code-block,
+.rtl-engine-active .code-block,
+.rtl-engine-active :is(pre, code),
+.rtl-engine-active :is(pre, code) * {
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: isolate !important;
+}
+
+.rtl-engine-active ms-prompt-chunk {
+    justify-content: flex-end !important;
+}
