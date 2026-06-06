@@ -14,14 +14,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Compile Chromium ZIP
+      - name: Compile Archival Payload
+        working-directory: ./absolute-rtl
         run: |
-          cd absolute-rtl
-          zip -r ../AbsoluteRTL-Chromium.zip * -x "*.git*" "*.github*" "README.md" "LICENSE" ".gitignore"
-
-      - name: Compile Firefox XPI
-        run: |
-          cp AbsoluteRTL-Chromium.zip AbsoluteRTL-Firefox.xpi
+          zip -r ../AbsoluteRTL-Chromium.zip . -x "*.git*" "*.github*" "README.md" "LICENSE" ".gitignore"
+          cp ../AbsoluteRTL-Chromium.zip ../AbsoluteRTL-Firefox.xpi
 
       - name: Attach Assets to Release
         env:
