@@ -16,12 +16,11 @@ jobs:
 
       - name: Compile Chromium ZIP
         run: |
-          # Zip all files, strictly excluding repository metadata and documentation
-          zip -r AbsoluteRTL-Chromium.zip . -x "*.git*" "*.github*" "README.md" "LICENSE" ".gitignore"
+          cd absolute-rtl
+          zip -r ../AbsoluteRTL-Chromium.zip * -x "*.git*" "*.github*" "README.md" "LICENSE" ".gitignore"
 
       - name: Compile Firefox XPI
         run: |
-          # Firefox utilizes the exact same archive structure, merely renamed to .xpi
           cp AbsoluteRTL-Chromium.zip AbsoluteRTL-Firefox.xpi
 
       - name: Attach Assets to Release
