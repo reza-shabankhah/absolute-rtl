@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultToggle = document.getElementById('default-toggle');
     const hintText = document.getElementById('shortcut-hint');
     const behaviorHint = document.getElementById('behavior-hint');
+    const versionDisplay = document.getElementById('version-display');
+
+    if (versionDisplay) {
+        const manifest = chrome.runtime.getManifest();
+        versionDisplay.textContent = `(v${manifest.version})`;
+    }
 
     const updateBehaviorHint = (isActive) => {
         behaviorHint.textContent = isActive 
@@ -18,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     chrome.commands.getAll((commands) => {
         const cmd = commands.find(c => c.name === "toggle-rtl-engine");
-        hintText.textContent = cmd && cmd.shortcut ? `Shortcut: ${cmd.shortcut}` : 'No shortcut set. Configure in browser settings.';
+        if (!mainToggle.disabled) {
+            hintText.textContent = cmd && cmd.shortcut ? `Shortcut: ${cmd.shortcut}` : 'No shortcut set. Configure in browser settings.';
+        }
     });
 
     chrome.storage.local.get({ defaultBehavior: true }, (data) => {
@@ -31,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             chrome.tabs.sendMessage(tabs[0].id, { action: "getState" }, (res) => {
                 if (chrome.runtime.lastError) {
                     mainToggle.disabled = true;
-                    hintText.textContent = "Engine inactive on this URL.";
+                    hintText.textContent = "Unsupported Website";
                 } else if (res) {
                     mainToggle.checked = res.isActive;
                 }

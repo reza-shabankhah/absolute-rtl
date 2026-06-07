@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AbsoluteRTL",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "An offline, on-demand browser extension for RTL rendering in data-sensitive AI workflows.",
   "permissions": [
     "activeTab",
