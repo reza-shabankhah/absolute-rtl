@@ -34,23 +34,20 @@ Rather than blindly flipping the entire `dir` attribute of the `<html>` tag—wh
 - **Deterministic Processing:** Identifies RTL character sets via absolute Unicode ranges.
 - **Synthetic Reconstruction:** Selectively applies `dir="rtl"` to specific text nodes while forcefully isolating code blocks, mathematical formulas, and command prompts into `dir="ltr"` to prevent syntax corruption.
 
-## Installation Protocols
+## Installation
 
 Currently, AbsoluteRTL is installed directly from the source code.
 
-1. Clone this repository or download the source code as a ZIP file and extract it to a permanent directory on your machine.
+**1. Get the source**
+Clone the repository or download it as a ZIP file:
+```bash
+git clone https://github.com/reza-shabankhah/absolute-rtl.git
+```
 
-- **Chromium (Chrome/Brave/Edge):**
-  1. Navigate to `chrome://extensions/`.
-  2. Enable **Developer mode**.
-  3. Click **Load unpacked**.
-  4. Select the `absolute-rtl` folder located inside the extracted repository.
-
-- **Mozilla Firefox:**
-  1. Navigate to `about:debugging`.
-  2. Select **This Firefox**.
-  3. Click **Load Temporary Add-on**.
-  4. Select the `manifest.json` file located inside the `absolute-rtl` folder. _(Note: Firefox purges unsigned temporary extensions upon browser restart)._
+**2. Load the extension**
+- **Chromium (Chrome / Edge / Brave):** Go to `chrome://extensions/`, enable **Developer mode**, click **Load unpacked**, and select the `AbsoluteRTL` folder.
+- **Firefox:** Go to `about:debugging`, click **This Firefox** > **Load Temporary Add-on**, and select the `manifest.json` inside the `AbsoluteRTL` folder.
+> **Note:** Firefox purges temporary extensions upon browser exit, so you will need to reload it each time you restart the browser.
 
 ## License
 

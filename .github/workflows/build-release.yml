@@ -14,14 +14,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Compile Archival Payload
-        working-directory: ./absolute-rtl
+      - name: Compile Extension Archive
         run: |
-          zip -r ../AbsoluteRTL-Chromium.zip . -x "*.git*" "*.github*" "README.md" "LICENSE" ".gitignore"
-          cp ../AbsoluteRTL-Chromium.zip ../AbsoluteRTL-Firefox.xpi
+          zip -r AbsoluteRTL-Extension.zip AbsoluteRTL/
 
       - name: Attach Assets to Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload ${{ github.event.release.tag_name }} AbsoluteRTL-Chromium.zip AbsoluteRTL-Firefox.xpi
+          gh release upload ${{ github.event.release.tag_name }} AbsoluteRTL-Extension.zip
