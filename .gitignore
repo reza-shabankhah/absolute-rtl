@@ -40,6 +40,3 @@ yarn-error.log*
 pnpm-debug.log*
 package-lock.json
 yarn.lock
-
-# Project-specific local brainstorms
-UX
